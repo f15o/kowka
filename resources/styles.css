@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&display=swap');
+
+body {
+  background: #121215;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.image-container {
+  flex-grow: 1;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.image-container > div {
+  display: flex;
+  position: relative;
+}
+
+#image {
+  object-fit: contain;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  max-height: 75vh;
+  max-width: 95vw;
+  border-radius: 0.75rem;
+  flex-shrink: 0;
+  flex-grow: 1;
+  min-width: 100%;
+  min-height: 100%;
+  cursor: pointer;
+}
+
+.image-container > div:hover > #clipboard {
+  opacity: 1;
+}
+
+#clipboard,
+#clipboard-success {
+  display: none;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+#clipboard {
+  transition: opacity 0.1s ease-in-out;
+  opacity: 0;
+  color: #ffffff80;
+}
+
+#clipboard:hover {
+  color: #ffffffff;
+}
+
+#clipboard-success {
+  color: #71ed3382;
+}
+
+button {
+  background: #232326;
+  appearance: none;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  font-family: Nunito, sans-serif;
+  padding: 0.2rem 1rem 0.5rem 1rem;
+  transition: all 0.1s ease-in-out;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  outline-style: none;
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #303037;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+button:active {
+  background: #232328;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.button-container {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+#loader {
+  height: 24px;
+  width: 24px;
+  opacity: 0;
+  animation: spin 1s infinite;
+  animation-timing-function: linear;
+  color: #525262;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
